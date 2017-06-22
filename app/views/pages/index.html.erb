@@ -3,5 +3,8 @@
   <h1>{{ header }}</h1>
 
   <p><input v-model="review1"></p>
-  {{ review1 }}
+  <!-- {{ reviews }} -->
+  <ul>
+    <li v-for="review in reviews">{{ review }}</li>
+  </ul>
 </div>

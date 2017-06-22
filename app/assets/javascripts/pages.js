@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     data: {
       message: 'Hello Vue!',
       header: 'Go Gitters',
-      review1: ''
+      review1: '',
+      reviews: ['Vue.js is super cool', 'I think this is all bad', 'I do not get the point of this', 'I think everything is cool']
     }
   });
 });
