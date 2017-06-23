@@ -2,7 +2,10 @@
   {{ message }}
   <h1>{{ header }}</h1>
   <ul>
-    <li v-for="review in reviews" v-on:click="removeReview(review)" v-if="isNotBad(review)">{{ review.author }}: {{ review.text }} </li>
+    <li v-for="review in reviews" v-on:click="removeReview(review)" v-if="isNotBad(review)">
+      <div>{{ review.author }}</div>
+      <div>{{ review.text }}</div>
+    </li>
   </ul>
   Your Name: <input v-model="reviewerName">
   Add Review: <input v-model="newReview">
