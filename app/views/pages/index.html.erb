@@ -1,10 +1,11 @@
 <div id="app">
   {{ message }}
   <h1>{{ header }}</h1>
-
-  <p><input v-model="review1"></p>
-  <!-- {{ reviews }} -->
   <ul>
-    <li v-for="review in reviews">{{ review }}</li>
+    <li v-for="review in reviews" v-on:click="removeReview(review)" v-if="isNotBad(review)">{{ review.author }}: {{ review.text }} </li>
   </ul>
+  Your Name: <input v-model="reviewerName">
+  Add Review: <input v-model="newReview">
+  <button v-on:click="addReview()">Submit Review</button>
+
 </div>
