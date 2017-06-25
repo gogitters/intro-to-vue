@@ -2,13 +2,17 @@
   {{ message }}
   <h1>{{ header }}</h1>
   <ul>
-    <li v-for="review in reviews" v-on:click="removeReview(review)" v-if="isNotBad(review)">
+    <li v-for="review in reviews" v-on:click="markComplete(review)" v-bind:class="{ strike: review.complete }">
       <div>{{ review.author }}</div>
       <div>{{ review.text }}</div>
     </li>
   </ul>
   Your Name: <input v-model="reviewerName">
   Add Review: <input v-model="newReview">
+  <div>
+    Reviews Incompleted: 
+    {{ countIncomplete() }}
+  </div>
+  <button v-on:click="removeCompletedReviews()">Clear Completed Reviews</button>
   <button v-on:click="addReview()">Submit Review</button>
-
 </div>
